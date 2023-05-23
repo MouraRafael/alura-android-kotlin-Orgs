@@ -9,10 +9,16 @@ import android.widget.Toast
 class MainActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val view = TextView(this)
-
-        view.setText("Cesta de Frutas")
         setContentView(R.layout.activity_main)
+
+        val nome: TextView = findViewById<TextView>(R.id.nome)
+        nome.text = "Cesta de Frutas"
+
+        val descricao = findViewById<TextView>(R.id.descricao)
+        descricao.text = "Laranja, manga e maçã"
+
+        val valor:TextView = findViewById(R.id.valor)
+        valor.text = "19.99"
 
 
     }
