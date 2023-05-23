@@ -5,10 +5,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 
 class MainActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val basis:RecyclerView;
         setContentView(R.layout.activity_main)
 
         val nome: TextView = findViewById<TextView>(R.id.nome)
