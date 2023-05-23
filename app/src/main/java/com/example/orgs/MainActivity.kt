@@ -12,7 +12,7 @@ class MainActivity: Activity() {
         val view = TextView(this)
 
         view.setText("Cesta de Frutas")
-        setContentView(view)
+        setContentView(R.layout.activity_main)
 
 
     }
