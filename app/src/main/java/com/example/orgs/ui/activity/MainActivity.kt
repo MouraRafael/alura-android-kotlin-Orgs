@@ -31,7 +31,8 @@ class MainActivity: Activity() {
         recyclerView.adapter = ListaProdutosAdapter(this,
             listOf(
                 Produto("123","321", BigDecimal("25.24")),
-                Produto("456","654", BigDecimal("25.24"))
+                Produto("456","654", BigDecimal("25.24")),
+                Produto("789","987", BigDecimal("25.24"))
             )
         )
         recyclerView.layoutManager = LinearLayoutManager(this)
