@@ -2,9 +2,12 @@ package com.example.orgs.ui.activity
 
 import android.app.Activity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orgs.R
+import com.example.orgs.model.Produto
 import com.example.orgs.ui.recylerview.adapter.ListaProdutosAdapter
+import java.math.BigDecimal
 
 class MainActivity: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +28,13 @@ class MainActivity: Activity() {
 //        valor.text = "19.99"
 
         val recyclerView:RecyclerView = findViewById(R.id.recyclerview)
-        recyclerView.adapter = ListaProdutosAdapter()
+        recyclerView.adapter = ListaProdutosAdapter(this,
+            listOf(
+                Produto("123","321", BigDecimal("25.24")),
+                Produto("456","654", BigDecimal("25.24"))
+            )
+        )
+        recyclerView.layoutManager = LinearLayoutManager(this)
 
 
 
