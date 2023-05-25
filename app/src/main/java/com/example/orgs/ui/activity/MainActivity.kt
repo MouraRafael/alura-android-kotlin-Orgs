@@ -1,20 +1,28 @@
 package com.example.orgs.ui.activity
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
+import android.text.Layout
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Adapter
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orgs.R
 import com.example.orgs.model.Produto
 import com.example.orgs.ui.recylerview.adapter.ListaProdutosAdapter
 import java.math.BigDecimal
+import java.math.MathContext
 
-class MainActivity: Activity() {
+class MainActivity: AppCompatActivity(R.layout.activity_main) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
 
-        setContentView(R.layout.activity_main)
+
 
 
 
