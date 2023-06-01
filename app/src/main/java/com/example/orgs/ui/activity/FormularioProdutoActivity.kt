@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import com.example.orgs.R
+import com.example.orgs.dao.ProdutosDao
 import com.example.orgs.model.Produto
 import java.math.BigDecimal
 
@@ -16,6 +17,8 @@ class FormularioProdutoActivity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val dao = ProdutosDao();
 
 
 
@@ -31,15 +34,23 @@ class FormularioProdutoActivity
             val campoValor = findViewById<EditText>(R.id.valor)
             val valorEmTexto = campoValor.text.toString()
 
-            val valor = if(valorEmTexto.isBlank()) {BigDecimal.ZERO} else {BigDecimal(valorEmTexto)}
+            val valor = if(valorEmTexto.isBlank()) {BigDecimal.ZERO} else {
+                BigDecimal(valorEmTexto)
+            }
 
             val produtoNovo = Produto(nome, descricrao, valor)
+
+
 
             Log.i("FormularioProduto","$produtoNovo")
 
 
 
-            Log.i("FormularioProduto", "OnCreate $nome")
+            dao.adiciona(produtoNovo)
+            Log.i("FormularioProduto", "OnCreate ${dao.buscaTodos()}")
+
+
+
         }
 
 
