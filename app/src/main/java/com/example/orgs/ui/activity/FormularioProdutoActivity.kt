@@ -49,7 +49,7 @@ class FormularioProdutoActivity
             dao.adiciona(produtoNovo)
             Log.i("FormularioProduto", "OnCreate ${dao.buscaTodos()}")
 
-
+            finish()
 
         }
 

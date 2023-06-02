@@ -30,6 +30,15 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
 //        val valor:TextView = findViewById(R.id.valor)
 //        valor.text = "19.99"
 
+
+
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+
         val dao = ProdutosDao()
         val recyclerView:RecyclerView = findViewById(R.id.recyclerview)
         recyclerView.adapter = ListaProdutosAdapter(this,dao.buscaTodos()
@@ -43,7 +52,5 @@ class MainActivity: AppCompatActivity(R.layout.activity_main) {
 
 
         }
-
-
     }
 }
