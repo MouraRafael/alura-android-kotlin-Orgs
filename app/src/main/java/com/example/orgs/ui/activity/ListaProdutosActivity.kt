@@ -17,12 +17,16 @@ class ListaProdutosActivity : AppCompatActivity() {
     val dao = ProdutosDao()
     private val adapter = ListaProdutosAdapter(this, dao.buscaTodos())
 
-    private lateinit var binding: ActivityListaProdutosBinding;
+    //private lateinit var binding: ActivityListaProdutosBinding;
+
+    private val binding by lazy {
+        ActivityListaProdutosBinding.inflate(layoutInflater)
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityListaProdutosBinding.inflate(layoutInflater)
+        //binding = ActivityListaProdutosBinding.inflate(layoutInflater)
 
         setContentView(binding.root)
 
