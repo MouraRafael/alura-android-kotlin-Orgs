@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.orgs.R
+import com.example.orgs.databinding.ActivityFormularioProdutoBinding
+import com.example.orgs.databinding.ProdutoItemBinding
 import com.example.orgs.model.Produto
 
 class ListaProdutosAdapter(
@@ -17,13 +19,13 @@ class ListaProdutosAdapter(
     private val produtos = produtos.toMutableList()
 
 
-    class ViewHolder(view: View):RecyclerView.ViewHolder(view) {
+    class ViewHolder(private val binding: ProdutoItemBinding):RecyclerView.ViewHolder(binding.root) {
         fun vincula(produto: Produto) {
-            val nome = itemView.findViewById<TextView>(R.id.produto_item_nome)
+            val nome = binding.produtoItemNome
             nome.text = produto.nome
 
-            itemView.findViewById<TextView>(R.id.produto_item_descricao).text = produto.descricao
-            itemView.findViewById<TextView>(R.id.produto_item_valor).text = produto.valor.toPlainString()
+            binding.produtoItemDescricao.text = produto.descricao
+            binding.produtoItemValor.text = produto.valor.toPlainString()
 
         }
     }
@@ -50,13 +52,9 @@ class ListaProdutosAdapter(
         o root o que determina o Viewgroup que enviaremos para onde enviamos o nosso recyclerview. ele vem a partir dos paramentros do onCreateViewHolder
         e o attach to rrot que determina se anexaremos essa view que estamos criando diretamente com o seu root ou se isso será feito em outro momento
          */
-        val view = inflater.inflate(
-            R.layout.produto_item,
-            parent,
-            false
-        )
+        val binding = ProdutoItemBinding.inflate(inflater,parent,false)
 
-        return ViewHolder(view)
+        return ViewHolder(binding)
 
 
     }
