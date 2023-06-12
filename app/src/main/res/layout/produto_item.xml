@@ -11,12 +11,16 @@
         android:layout_height="wrap_content"
 
         android:layout_margin="16dp"
+        android:fontFamily="@font/montserrat_bold"
+
+
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/imageView3"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Salada de Frutas"
 
-        />
+        tools:text="Salada de Frutas" />
 
 
     <TextView
