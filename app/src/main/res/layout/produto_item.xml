@@ -78,13 +78,13 @@
 
         tools:text="19.99" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideLine"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent=".3"
-        />
+<!--    <androidx.constraintlayout.widget.Guideline-->
+<!--        android:id="@+id/guideLine"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:orientation="vertical"-->
+<!--        app:layout_constraintGuide_percent=".3"-->
+<!--        />-->
 
     <ImageView
         android:id="@+id/imageView3"
@@ -92,11 +92,12 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guideLine"
+        app:layout_constraintEnd_toStartOf="@id/produto_item_nome"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/produto_1"
         tools:srcCompat="@tools:sample/backgrounds/scenic"
+        app:layout_constraintWidth_percent=".3"
 
 
         />
